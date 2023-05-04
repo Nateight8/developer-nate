@@ -11,6 +11,16 @@ const project = {
       options: { source: "name" },
     },
     {
+      name: "dataset_text",
+      title: "Dataset Text Color",
+      type: "string",
+    },
+    {
+      name: "dataset_bg",
+      title: "Dataset Background Color",
+      type: "string",
+    },
+    {
       name: "image",
       title: "Image",
       type: "image",
