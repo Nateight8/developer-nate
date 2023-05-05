@@ -4,13 +4,15 @@ import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
 import React, { useRef, useLayoutEffect } from "react";
 gsap.registerPlugin(ScrollTrigger);
 import { Project } from "../../../../../types/project";
+import { AspectRatio } from "@/components/ui/aspect-ratio";
+import Image from "next/image";
 
 type Props = {
   project: Project;
 };
 
 function Section({ project }: Props) {
-  const { name } = project;
+  const { name, image } = project;
 
   const sectionRef = useRef<HTMLDivElement | null>(null);
   useLayoutEffect(() => {
@@ -37,10 +39,9 @@ function Section({ project }: Props) {
     <main className="w-[98vw] overflow-hidden">
       <section ref={sectionRef} className="flex w-fit text-slate-200">
         <div className="panel w-screen  flex items-center">
-          {/* <h1 className="text-[32rem] md:text-[40rem] text-slate-300 whitespace-nowrap font-customFont font-bold">
+          <h1 className="text-[32rem] md:text-[40rem] text-slate-300 whitespace-nowrap font-customFont font-bold">
             {name}
-          </h1> */}
-          <h3 className="te text-2xl font-customFont mb-2">{name}</h3>
+          </h1>
         </div>
         <div className="panel bg-transparent h-screen w-screen flex items-center justify-center">
           <div className="max-w-prose">
@@ -56,14 +57,17 @@ function Section({ project }: Props) {
           </div>
         </div>
         <div className="panel h-screen w-screen flex items-center justify-center">
-          <div className="max-w-prose">
-            <h3 className="te text-2xl font-customFont mb-2">Check it out</h3>
-            <p className="">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit.
-              Accusantium magni quo deserunt iure veniam est! Mollitia dolores
-              quis assumenda sapiente expedita natus iusto modi explicabo
-              aliquam! Illo officia labore possimus.
-            </p>
+          <div className="max-w-[41.875rem] shadow-2xl shadow-slate-800 w-full z-10 ring-2 ring-slate-800 ring-offset-4 rounded-md ring-offset-current ring-opacity-25 hover:ring-opacity-60 transition-all duration-700 hover:cursor-pointer">
+            <AspectRatio ratio={16 / 9}>
+              {image && (
+                <Image
+                  src={image}
+                  alt=""
+                  fill
+                  className="rounded-md object-cover"
+                />
+              )}
+            </AspectRatio>
           </div>
         </div>
       </section>
