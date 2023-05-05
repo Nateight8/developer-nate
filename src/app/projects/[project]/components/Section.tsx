@@ -43,8 +43,8 @@ function Section({ project }: Props) {
             {name}
           </h1>
         </div>
-        <div className="panel bg-transparent h-screen w-screen flex items-center justify-center">
-          <div className="max-w-prose">
+        <div className="panel bg-transparent h-screen w-screen flex items-center justify-center px-4">
+          <div className="max-w-prose bg-red-500">
             <h3 className="te text-2xl font-customFont mb-2">
               Project Overview
             </h3>
@@ -56,7 +56,7 @@ function Section({ project }: Props) {
             </p>
           </div>
         </div>
-        <div className="panel h-screen w-screen flex items-center justify-center">
+        <div className="panel h-screen w-screen flex items-center justify-center px-4">
           <div className="max-w-[41.875rem] shadow-2xl shadow-slate-800 w-full z-10 ring-2 ring-slate-800 ring-offset-4 rounded-md ring-offset-current ring-opacity-25 hover:ring-opacity-60 transition-all duration-700 hover:cursor-pointer">
             <AspectRatio ratio={16 / 9}>
               {image && (
