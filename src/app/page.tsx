@@ -8,7 +8,7 @@ const inter = Inter({ subsets: ["latin"] });
 
 export default async function Home() {
   const projects = await getProjects();
-  console.log(projects);
+
   return (
     <main className="">
       <div className="main flex flex-col items-center justify-between">
