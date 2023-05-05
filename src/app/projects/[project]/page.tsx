@@ -2,11 +2,22 @@
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
 import React, { useRef, useLayoutEffect } from "react";
+import { getProject } from "../../../../sanity/sanity-utils";
 gsap.registerPlugin(ScrollTrigger);
 
-type Props = {};
+type Props = {
+  params: { project: string };
+};
 
-function Page({}: Props) {
+async function Page({ params }: Props) {
+  const slug = params.project;
+  const project = await getProject(slug);
+
+  console.log(project);
+
+  // const { name } = project;
+
+  // gsap
   const sectionRef = useRef<HTMLDivElement | null>(null);
 
   useLayoutEffect(() => {
@@ -19,7 +30,7 @@ function Page({}: Props) {
         scrollTrigger: {
           trigger: sectionRef.current,
           start: "top top",
-          markers: true,
+          // markers: true,
           scrub: 1,
           pin: true,
 
@@ -38,7 +49,7 @@ function Page({}: Props) {
       <section ref={sectionRef} className="flex w-fit text-slate-200">
         <div className="panel w-fit flex items-center">
           <h1 className="text-[32rem] md:text-[40rem] text-slate-300 whitespace-nowrap font-customFont font-bold">
-            MEK studio
+            {project.name}
           </h1>
         </div>
         <div className="panel bg-transparent h-screen w-screen flex items-center justify-center">
