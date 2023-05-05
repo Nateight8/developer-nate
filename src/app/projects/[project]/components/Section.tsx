@@ -44,7 +44,7 @@ function Section({ project }: Props) {
           </h1>
         </div>
         <div className="panel bg-transparent h-screen w-screen flex items-center justify-center px-4">
-          <div className="max-w-prose bg-red-500">
+          <div className="max-w-prose bg-slate-800/60 ring-2 ring-slate-800 ring-offset-4 rounded-md ring-offset-current">
             <h3 className="te text-2xl font-customFont mb-2">
               Project Overview
             </h3>
