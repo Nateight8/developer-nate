@@ -33,6 +33,8 @@ function Section({ project }: Props) {
         },
       });
     }, sectionRef);
+
+    return () => ctx.revert();
   });
 
   return (
@@ -43,8 +45,8 @@ function Section({ project }: Props) {
             {name}
           </h1>
         </div>
-        <div className="panel bg-transparent h-screen w-screen flex items-center justify-center px-4">
-          <div className="max-w-prose bg-slate-800/60 ring-2 ring-slate-800 ring-offset-4 rounded-md ring-offset-current">
+        <div className="panel bg-transparent h-screen w-screen flex items-center justify-center">
+          <div className="max-w-prose bg-background/75 p-4 rounded-md">
             <h3 className="te text-2xl font-customFont mb-2">
               Project Overview
             </h3>
