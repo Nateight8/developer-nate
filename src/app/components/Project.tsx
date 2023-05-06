@@ -64,7 +64,7 @@ function Projects({ project }: Props) {
         data-name={dataset_text}
         className="project w-full overflow-hidden h-screen px-4 my-6 flex items-center justify-center relative"
       >
-        <div className="absolute left-10 md:bottom-16 bottom-6 uppercase z-0">
+        <div className="absolute left-4 md:bottom-16 bottom-8 uppercase z-0">
           <h1 className="text-9xl text-slate-300 whitespace-nowrap font-customFont font-bold  ">
             {name}
           </h1>
